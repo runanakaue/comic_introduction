@@ -7,7 +7,7 @@ class ComicsController < ApplicationController
   end
 
   def index
-    @comic = Comic.all
+    @comics = Comic.all
     @user = current_user
   end
 
