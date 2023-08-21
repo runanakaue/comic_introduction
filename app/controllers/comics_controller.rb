@@ -4,6 +4,8 @@ class ComicsController < ApplicationController
 
   def new
     @comic = Comic.new
+    @publishers = Publisher.all
+    @cartoonists = Cartoonist.all
   end
 
   def index
