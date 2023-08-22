@@ -19,6 +19,19 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Humour-Original';
+  src: asset-url('/assets/Humour-Original.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+p, a, h1, h2, thead, tbody, strong, form {
+  font-family: 'Humour-Original';
+}
+
+
 div {
   display : block;
 }
@@ -63,3 +76,6 @@ label {
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+@import 'select2';
+@import 'select2-bootstrap';

@@ -4,26 +4,34 @@
     <div class = "contailner">
       <div class = "row">
         <div class = "col-sm-12 col-md-8 col-lg-5 p-5 px-sm-0 mx-auto">
-          <h2>Editing Comic</h2>
+          <h2><i class="fas fa-book-open"></i>Editing Comic</h2>
             <% if @comic.errors.any? %>
             <div id = "error_explanation">
-              <h2><%= @comic.errors.count %>error prohibited this user from saved:</h2>
+              <h2><%= @comic.errors.count %> errors prohibited this user from being saved:</h2>
                 <ul>
-                  <% @comic.errors.full_message.each do |message| %>
+                  <% @comic.errors.full_messages.each do |message| %>
                     <li><%= message %></li>
                   <% end %>
                 </ul>
-            </div>
+
             <% end %>
 
             <%= form_with model:@comic, local:true do |f| %>
               <div class = "form-group">
-                <%= f.label :title %>
+                <%= f.label :title, "作品名" %>
                 <%= f.text_field :title %>
               </div>
               <div class = "form-group">
-                <%= f.label :body %>
+                <%= f.label :body, "内容" %>
                 <%= f.text_area :body %>
+              </div>
+              <div class="form-group">
+                <%= f.label :artist_name_id, "漫画家" %>
+                <%= f.collection_select :cartoonist_id, Cartoonist.all, :id, :artist_name %>
+              </div>
+              <div class="form-group">
+                <%= f.label :campany_name_id, "出版社" %>
+                <%= f.collection_select :campany_name_id, Publisher.all, :id, :name, prompt: true %>
               </div>
               <div class = "form-group">
                 <%= f.submit "Update Comic" %>

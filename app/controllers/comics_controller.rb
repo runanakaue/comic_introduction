@@ -16,6 +16,8 @@ class ComicsController < ApplicationController
   def show
     @comic = Comic.find(params[:id])
     @user = @comic.user
+    @cartoonist = @comic.cartoonist
+    @publisher = @comic.publisher
   end
 
   def edit
@@ -28,16 +30,19 @@ class ComicsController < ApplicationController
 
 
   def create
-    @comic = current_user.comics(comic_params)
+    @comic = current_user.comics.build(comic_params)
     if @comic.save
       flash[:notice] = 'Comic was successfully created.'
       redirect_to comic_path(@comic.id)
     else
       @user = current_user
       @comics = Comic.all
-      render :index
+      @publishers = Publisher.all
+      @cartoonists = Cartoonist.all
+      render :new
     end
   end
+
 
   def update
     @comic = Comic.find(params[:id])
@@ -60,7 +65,7 @@ class ComicsController < ApplicationController
   private
 
   def comic_params
-    params.require(:comic).permit(:title, :body)
+    params.require(:comic).permit(:title, :body, :cartoonist_id)
   end
 
   def require_permission

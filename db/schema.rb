@@ -22,12 +22,14 @@ ActiveRecord::Schema.define(version: 2023_08_20_153703) do
     t.string "title"
     t.text "body"
     t.integer "user_id"
+    t.integer "publisher_id"
+    t.integer "cartoonist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "publishers", force: :cascade do |t|
-    t.string "company_name"
+    t.string "campany_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

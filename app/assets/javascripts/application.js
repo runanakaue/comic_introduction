@@ -17,3 +17,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//= require select2
+$(document).ready(function() {
+  $('.js-searchable').select2({
+    theme: 'bootstrap'
+  });
+});
