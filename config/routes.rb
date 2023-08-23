@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :comics, only: [:new, :create, :index, :show, :edit, :update]
   resources :publishers, only: [:index, :show]
   resources :cartoonists, only: [:index, :show]
+  get '/terms', to: 'pages#terms'
 end

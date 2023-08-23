@@ -15,17 +15,22 @@
     </tbody>
   </table>
 
-<div class='row'>
+      <div class='row'>
 
           <% if @user == current_user %>
             <%= link_to edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block" do %>
               <i class="fas fa-user-cog"></i>
             <% end %>
           <% else %>
-
             <%= link_to edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block" do %>
               <i class="fas fa-user-cog"></i>
             <% end %>
           <% end %>
 
-</div>
+          <ul>
+             <a class = "#", href = "/terms">
+               <i class="fas fa-check"></i>How to Use
+             </a>
+          </ul>
+
+      </div>

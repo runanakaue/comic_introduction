@@ -26,8 +26,15 @@
   font-style: normal;
 }
 
+// $teal-800: #00695C;
+$teal-900: #004d40;
 
-p, a, h1, h2, thead, tbody, strong, form {
+.navbar {
+  background-color: $teal-900;
+}
+
+
+p, a, h1, h2, h5, thead, tbody, strong, form {
   font-family: 'Humour-Original';
 }
 
@@ -71,9 +78,19 @@ label {
   margin-bottom: 0.5rem;
 }
 
+// li {
+//   list-style: none;
+// }
+
+
+
+
+
 
 
 @import "bootstrap";
+// @import 'custom';
+
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
