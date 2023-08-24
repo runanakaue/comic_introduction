@@ -22,23 +22,23 @@
                 <%= f.text_field :title %>
               </div>
               <div class = "form-group">
-                <%= f.label :body, "内容" %>
+                <%= f.label :body, "レビュー" %>
                 <%= f.text_area :body %>
               </div>
               <div class="form-group">
-                <%= f.label :artist_name_id, "漫画家" %>
-                <%= f.collection_select :cartoonist_id, Cartoonist.all, :id, :artist_name %>
+                <%= f.label :artist_name_id, "作者" %>
+                <%= select_tag "comic[cartoonist_id]", options_for_select([["選択してください", ""]] + Cartoonist.all.map { |c| [c.artist_name, c.id] }), { class: "js-searchable", multiple: true } %>
               </div>
               <div class="form-group">
                 <%= f.label :campany_name_id, "出版社" %>
-                <%= f.collection_select :campany_name_id, Publisher.all, :id, :name, prompt: true %>
+                <%= select_tag "comic[publisher_id]", options_for_select([["選択してください", ""]] + Publisher.all.map { |p| [p.company_name, p.id] }), { class: "js-searchable", multiple: true } %>
               </div>
               <div class = "form-group">
                 <%= f.submit "Update Comic" %>
               </div>
-              <%= link_to "Show", comic_path(@comic.id) %>
-              |
-              <%= link_to "Back", comics_path %>
+              <%= link_to "Show", comic_path(@comic.id), class: "btn btn-secondary" %>
+
+              <%= link_to "Back", comics_path, class: "btn btn-secondary" %>
             <% end %>
         </div>
       </div>

@@ -6,6 +6,7 @@ class PublishersController < ApplicationController
 
   def show
     @publisher = Publisher.find(params[:id])
-    @user = @publisher.user
+    @user = current_user
+    @publishers = @user.publishers
   end
 end

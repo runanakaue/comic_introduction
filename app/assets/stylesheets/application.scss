@@ -26,6 +26,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'rounded-x-mplus-2p-bold';
+  src: asset-url('/assets/rounded-x-mplus-2p-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 // $teal-800: #00695C;
 $teal-900: #004d40;
 
@@ -34,8 +41,23 @@ $teal-900: #004d40;
 }
 
 
-p, a, h1, h2, h5, thead, tbody, strong, form {
+header, h1, h2, h5, thead, strong {
   font-family: 'Humour-Original';
+}
+
+tbody, td, h3, p, form {
+  font-family: 'rounded-x-mplus-2p-bold';
+}
+
+// .btn-outline-primary {
+//   font-family: 'rounded-x-mplus-2p-bold';
+//   color: $teal-900;
+// }
+
+.btn-outline-primary {
+  font-family: 'rounded-x-mplus-2p-bold';
+  color: $teal-900;
+  border-color: $teal-900;
 }
 
 

@@ -6,6 +6,7 @@ class CartoonistsController < ApplicationController
 
   def show
     @cartoonist = Cartoonist.find(params[:id])
-    @user = @cartoonist.user
+    @user = current_user
+    @cartoonists = @user.cartoonists
   end
 end
